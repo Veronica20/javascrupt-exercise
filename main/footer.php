@@ -1,0 +1,37 @@
+</div>
+</body>
+<script>
+    var definitive = [];
+    function addInArray(val) {
+        input_value = (val.split(" ")).length == 1 ? val : val.split(" ");
+
+        if (typeof input_value == 'string') {
+            if(Number(input_value)){
+                definitive.push(Number(input_value));
+            }
+        } else if (typeof input_value == 'object') {
+            input_value.forEach(function (element) {
+                if(Number(element)){
+                    definitive.push(Number(element));
+                }
+            });
+        }
+        document.getElementById("input").value = "";
+        var div = document.getElementById('finish');
+        div.innerHTML = definitive;
+    }
+
+    function myFunction() {
+
+        var min = Math.min.apply(null, definitive),
+            max = Math.max.apply(null, definitive);
+            result = definitive.indexOf(max - min);
+            if( result == -1){
+                alert('Oops : false');
+            }else{
+                alert('Congrats : true');
+            }
+        location.reload();
+    }
+</script>
+</html>
