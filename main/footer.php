@@ -53,5 +53,18 @@
         alert(index_sec);
         location.reload();
     }
+    
+    function repeatCoun( amount , repeat ) {
+        
+        for(var i=0 ; i< repeat ; i++ ){
+            for(var j=0 ; j< 2 ; j++){
+                definitive.push(definitive[definitive.length - amount]);
+                definitive.unshift(definitive[amount-1])
+            }
+        }
+
+        alert(definitive);
+        location.reload();
+    }
 </script>
 </html>
